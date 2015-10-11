@@ -1,0 +1,22 @@
+{
+  "name": "ph-feedback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanDuplantis/PH-Feedback.git"
+  },
+  "author": "Bryan Duplantis <duplantis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BryanDuplantis/PH-Feedback/issues"
+  },
+  "homepage": "https://github.com/BryanDuplantis/PH-Feedback#readme",
+  "dependencies": {
+    "pg": "^4.4.2"
+  }
+}
