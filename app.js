@@ -1,6 +1,7 @@
 // npm requires
 var express     = require('express');
-var app         = express(); // create app with Express
+var app         = express(); //create app with Express
+var Sequelize   = require('sequelize');
 
 //require PostgreSQL
 var pg = require("pg");

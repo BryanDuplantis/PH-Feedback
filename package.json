@@ -18,6 +18,7 @@
   "homepage": "https://github.com/BryanDuplantis/PH-Feedback#readme",
   "dependencies": {
     "express": "^4.13.3",
-    "pg": "^4.4.2"
+    "pg": "^4.4.2",
+    "sequelize": "^3.11.0"
   }
 }
