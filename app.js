@@ -1,33 +1,19 @@
 // npm requires
 var express     = require('express');
 var app         = express(); //create app with Express
-var Sequelize   = require('sequelize');
+var router      = express.Router();
+var hello       = require('./routes/hello');
 
-//require PostgreSQL
-var pg = require("pg");
+app.set('view engine', 'ejs');
 
-//connect to 'customers' database on PostgreSQL
-var conString = "postgres://localhost:5432/customers";
+app.use('/', hello)
 
-var client = new pg.Client(conString);
-client.connect();
+//initializing a port
+var port = process.env.PORT || 2000;
 
-//drops table if exists
-client.query("DROP TABLE IF EXISTS cstmrs");
+var server = app.listen(port, function () {
+  var host = server.address().address;
+  var port = server.address().port;
 
-//creates table & inserts 4 records into it
-client.query("CREATE TABLE IF NOT EXISTS cstmrs(firstname varchar(64), lastname varchar(64))");
-client.query("INSERT INTO cstmrs(firstname, lastname) values($1, $2)", ['Bryan', 'Duplantis']);
-client.query("INSERT INTO cstmrs(firstname, lastname) values($1, $2)", ['Ed', 'Bush']);
-client.query("INSERT INTO cstmrs(firstname, lastname) values($1, $2)", ['Zoe', 'Ames']);
-client.query("INSERT INTO cstmrs(firstname, lastname) values($1, $2)", ['Bob', 'Paterno']);
-
-var query = client.query("SELECT firstname, lastname FROM cstmrs ORDER BY lastname, firstname");
-query.on("row", function (row, result) {
-    result.addRow(row);
-});
-//On 'end' JSONify and write results to console
-query.on("end", function (result) {
-    console.log(JSON.stringify(result.rows, null, "    "));
-    client.end();
+  console.log('The magic is happening at http://%s:%d', host, port);
 });
