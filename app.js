@@ -1,10 +1,13 @@
-// npm requires
 var express     = require('express');
-var app         = express(); //create app with Express
+var app         = express();
 var router      = express.Router();
+var bodyParser  = require('body-parser');
 var hello       = require('./routes/hello');
 
 app.set('view engine', 'ejs');
+
+//body-parser returns middleware that only parses JSON
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/', hello)
 
