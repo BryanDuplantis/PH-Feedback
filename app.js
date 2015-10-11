@@ -1,3 +1,7 @@
+// npm requires
+var express     = require('express');
+var app         = express(); // create app with Express
+
 //require PostgreSQL
 var pg = require("pg");
 
@@ -6,6 +10,9 @@ var conString = "postgres://localhost:5432/customers";
 
 var client = new pg.Client(conString);
 client.connect();
+
+//drops table if exists
+client.query("DROP TABLE IF EXISTS cstmrs");
 
 //creates table & inserts 4 records into it
 client.query("CREATE TABLE IF NOT EXISTS cstmrs(firstname varchar(64), lastname varchar(64))");
