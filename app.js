@@ -7,7 +7,7 @@ var conString = "postgres://localhost:5432/customers";
 var client = new pg.Client(conString);
 client.connect();
 
-//creates new table
+//creates table & inserts 3 records into it
 client.query("CREATE TABLE IF NOT EXISTS cstmrs(firstname varchar(64), lastname varchar(64))");
 client.query("INSERT INTO cstmrs(firstname, lastname) values($1, $2)", ['Bryan', 'Duplantis']);
 client.query("INSERT INTO cstmrs(firstname, lastname) values($1, $2)", ['Ed', 'Bush']);
@@ -18,6 +18,7 @@ var query = client.query("SELECT firstname, lastname FROM cstmrs ORDER BY lastna
 query.on("row", function (row, result) {
     result.addRow(row);
 });
+//On 'end' JSONify and write results to console
 query.on("end", function (result) {
     console.log(JSON.stringify(result.rows, null, "    "));
     client.end();
