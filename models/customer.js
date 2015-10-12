@@ -19,7 +19,7 @@ Customer.find = function(callback) {
     query.on('end', function (result) {
 
         callback(JSON.stringify(result.rows));
-        client.end();
+        //client.end();
     });
 };
 
