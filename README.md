@@ -24,9 +24,11 @@ The app's landing page will be served on `http://localhost:2000`. Linked here: [
 
 You will find the clients data displayed as JSON on `http://localhost:2000/clients`. Linked here: [Clients](http://localhost:2000/clients)
 
-To view the newly-created tables in Postgres, install Postgres.app if you don't already have it. Linked here: [Postgres.app](http://postgresapp.com/)
+To get a PostgreSQL server running on your Mac, install Postgres.app. This link is for Mac users only: [Postgres.app](http://postgresapp.com/)
 
-Check to ensure the clients, product_details, products and stakeholders tables were created in the customers database by opening
+If you prefer a GUI to the command line on the Mac, I use [Postico](https://eggerapps.at/postico/), a clean, easy-to-use client for OSX to look at my data.
+
+If you are working with the command line, check to ensure the clients, product_details, products and stakeholders tables were created in the customers database by opening
 ```
 $ psql customers
 ```
