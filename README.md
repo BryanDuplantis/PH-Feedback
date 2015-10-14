@@ -21,6 +21,7 @@ Run the app with:
 $ nodemon app
 ```
 The app's landing page will be served on `http://localhost:2000`. Linked here: [Landing Page](http://localhost:2000)
+
 You will find the clients data displayed as JSON on `http://localhost:2000/clients`. Linked here: [Clients](http://localhost:2000/clients)
 
 To view the newly-created tables in Postgres, install Postgres.app if you don't already have it. Linked here: [Postgres.app](http://postgresapp.com/)
