@@ -1,8 +1,6 @@
 # ph-feedback
 ### A Node app that inserts Employee names into a relational database, retrieves the data and displays results as JSON
 
-This app simply accepts submissions for exit interviews and sends them to a relational database.
-
 # Usage
 
 ## Set up
