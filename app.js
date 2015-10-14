@@ -3,7 +3,7 @@ var app         = express();
 var router      = express.Router();
 var bodyParser  = require('body-parser');
 var hello       = require('./routes/hello');
-var customers   = require('./routes/customers');
+var clients   = require('./routes/clients');
 
 //require controllers
 var customer = require('./controllers/clients');
@@ -17,7 +17,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 
 //routes
 app.get('/', hello)
-app.get('/customers', customer.getCustomers);
+app.get('/clients', customer.getCustomers);
 
 //initializing a port
 var port = process.env.PORT || 2000;
